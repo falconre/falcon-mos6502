@@ -90,7 +90,7 @@ impl fmt::Display for Instruction {
 
 pub fn decode(buf: &[u8]) -> Option<Instruction> {
     fn op16(buf: &[u8]) -> Option<u16> {
-        Some(((buf.get(1)?.clone() as u16) << 8) | (buf.get(2)?.clone() as u16))
+        Some(((buf.get(2)?.clone() as u16) << 8) | (buf.get(1)?.clone() as u16))
     }
 
     fn op8(buf: &[u8]) -> Option<u8> {
